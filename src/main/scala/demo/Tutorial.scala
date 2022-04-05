@@ -11,7 +11,7 @@ object Tutorial {
   class Car(val a: Int = 1000, val b: Int = 2000) {
     var topClassCost: Int = a
     private var roadTax = b
-    val carNumber = Car.newNumber
+    val carNumber: Int = Car.newNumber
 
     def this() {
       //this.roadTax = roadTax
@@ -34,12 +34,12 @@ object Tutorial {
     def getCarNumber: Int = carNumber
 
     override def toString: String = {
-      return "id: %d tax: %d\r\n".format(carNumber,roadTax)
+      "id: %d tax: %d\r\n".format(carNumber,roadTax)
     }
     object Car {
       private var number: Int = 0
 
-      def newNumber: Int = {
+      private def newNumber: Int = {
         number += 1; number
       }
     }
